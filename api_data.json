@@ -13,5 +13,10 @@
         "id": 3,
         "name": "GHI",
         "course": "MBBS"
+    },
+    {
+        "id": 4,
+        "name": "JKL",
+        "course": "MCA"
     }
 ]
