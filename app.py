@@ -76,6 +76,26 @@ def submit():
             error="Submission failed. Please check the database connection."
         ), 500
 
+#Receiving To-Do item data and storing it in MongoDB
+@app.route("/submittodoitem", methods=["POST"])
+def submit_todo_item():
+    #Getting the values entered by the user
+    item_name = request.form.get("itemName", "").strip()
+    item_description = request.form.get("itemDescription", "").strip()
+    try:
+        #Checking the database connection using ping
+        client.admin.command("ping")
+        #Inserting the To-Do item into MongoDB
+        collection.insert_one({
+            "itemName": item_name,
+            "itemDescription": item_description
+        })
+        return "To-Do item submitted successfully!"
+    except Exception:
+        #Displaying the error in the terminal
+        app.logger.exception("Could not submit To-Do item to MongoDB")
+        return "Submission failed. Please check the database connection.", 500
+
 #Success Page
 @app.route("/success")
 def success():
