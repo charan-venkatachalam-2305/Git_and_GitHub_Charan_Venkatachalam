@@ -26,6 +26,10 @@ collection = db["flask-tutorial"]
 def index():
     return render_template("index.html", error=None)
 
+#To-Do page
+@app.route("/todo")
+def todo():
+    return render_template("todo.html")
 
 #Reading the JSON file using Python File Handling and to return its data
 @app.route("/api")
