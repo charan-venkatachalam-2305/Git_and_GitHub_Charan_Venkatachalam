@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "ABC",
+        "course": "BBA"
+    },
+    {
+        "id": 2,
+        "name": "DEF",
+        "course": "MBA"
+    },
+    {
+        "id": 3,
+        "name": "GHI",
+        "course": "MBBS"
+    }
+]
